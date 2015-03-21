@@ -15,6 +15,7 @@
 		5E4949F41ABC8AAD00E688D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E4949F21ABC8AAD00E688D2 /* LaunchScreen.xib */; };
 		5E494A001ABC8AAD00E688D2 /* gistrunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4949FF1ABC8AAD00E688D2 /* gistrunnerTests.m */; };
 		5E4AB9BA1ABCADC9009B6C69 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4AB9B91ABCADC9009B6C69 /* DetailViewController.m */; };
+		5EFE45EE1ABCD7A1009971C1 /* FilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFE45ED1ABCD7A1009971C1 /* FilesViewController.m */; };
 		E69265F2E9C11A231154F4C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A6F7AB8E6149DDEFB9CC40 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,8 @@
 		5E4949FF1ABC8AAD00E688D2 /* gistrunnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gistrunnerTests.m; sourceTree = "<group>"; };
 		5E4AB9B81ABCADC9009B6C69 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		5E4AB9B91ABCADC9009B6C69 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		5EFE45EC1ABCD7A1009971C1 /* FilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesViewController.h; sourceTree = "<group>"; };
+		5EFE45ED1ABCD7A1009971C1 /* FilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesViewController.m; sourceTree = "<group>"; };
 		D564E7A4AE90EE7D38739065 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DBC593C5630782E74A2607BF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +98,8 @@
 				5E4949E81ABC8AAD00E688D2 /* AppDelegate.m */,
 				5E4949EA1ABC8AAD00E688D2 /* ViewController.h */,
 				5E4949EB1ABC8AAD00E688D2 /* ViewController.m */,
+				5EFE45EC1ABCD7A1009971C1 /* FilesViewController.h */,
+				5EFE45ED1ABCD7A1009971C1 /* FilesViewController.m */,
 				5E4949ED1ABC8AAD00E688D2 /* Main.storyboard */,
 				5E4AB9B81ABCADC9009B6C69 /* DetailViewController.h */,
 				5E4AB9B91ABCADC9009B6C69 /* DetailViewController.m */,
@@ -287,6 +292,7 @@
 				5E4949EC1ABC8AAD00E688D2 /* ViewController.m in Sources */,
 				5E4949E91ABC8AAD00E688D2 /* AppDelegate.m in Sources */,
 				5E4949E61ABC8AAD00E688D2 /* main.m in Sources */,
+				5EFE45EE1ABCD7A1009971C1 /* FilesViewController.m in Sources */,
 				5E4AB9BA1ABCADC9009B6C69 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

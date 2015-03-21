@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "DetailViewController.h"
+#import "FilesViewController.h"
+
 #import <AFNetworking/AFNetworking.h>
 
 
@@ -104,7 +106,7 @@
             languages = @"Unspecified";
         }
         else {
-            languages = gists[indexPath.row][@"files"][keys[0]][@"language"];
+            languages = [NSString stringWithFormat:@"Language: %@, Number of Files: %lu", gists[indexPath.row][@"files"][keys[0]][@"language"], (unsigned long)[keys count]];
         }
     }
         
@@ -115,18 +117,31 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"jump"]) {
-        NSLog(@"we're in the segue");
+        NSLog(@"we're in the jump segue");
         DetailViewController *detailController = (DetailViewController *)segue.destinationViewController;
         NSArray *keys = [gists[[sender integerValue]][@"files"] allKeys];
         detailController.gistUrl = gists[[sender integerValue]][@"files"][keys[0]][@"raw_url"];
         detailController.fileName = keys[0];
+        NSLog(@"everything got set");
     }
+    else if ([segue.identifier isEqualToString:@"hop"]) {
+        NSLog(@"we're in the hop segue");
+        FilesViewController *filesController = (FilesViewController *)segue.destinationViewController;
+        filesController.files = gists[[sender integerValue]][@"files"];
+    }
+
 }
 
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSNumber *selected = [NSNumber numberWithInteger:indexPath.row];
-    [self performSegueWithIdentifier:@"jump" sender:selected];
+    NSArray *keys = [gists[indexPath.row][@"files"] allKeys];
+    if ([keys count] > 1) {
+        [self performSegueWithIdentifier:@"hop" sender:selected];
+    }
+    else {
+        [self performSegueWithIdentifier:@"jump" sender:selected];
+    }
     return indexPath;
 }
 

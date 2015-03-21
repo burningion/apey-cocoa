@@ -10,6 +10,7 @@
 
 
 @interface DetailViewController ()
+
 @property (weak, nonatomic) IBOutlet UINavigationBar *fileTitle;
 @property (weak, nonatomic) IBOutlet UIWebView *webbyView;
 
@@ -19,12 +20,17 @@
 
 @synthesize fileTitle, webbyView, gistUrl, fileName;
 
+- (IBAction)back:(id)sender {
+    NSLog(@"touched");
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@", fileName);
-    NSLog(@"%@", gistUrl);
+    NSLog(@"%@ eee", fileName);
+    NSLog(@"%@ gggg", gistUrl);
     fileTitle.topItem.title = fileName;
     NSURL *theURL = [NSURL URLWithString:gistUrl];
     NSURLRequest *theRequest  = [NSURLRequest requestWithURL:theURL];
@@ -37,6 +43,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
