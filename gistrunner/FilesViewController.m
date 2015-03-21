@@ -44,6 +44,7 @@
         
         detailController.gistUrl = files[keys[[sender integerValue]]][@"raw_url"];
         detailController.fileName = keys[[sender integerValue]];
+        detailController.gist = self.files;
     }
 }
 

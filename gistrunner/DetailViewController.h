@@ -11,4 +11,5 @@
 @interface DetailViewController : UIViewController
 @property (weak, nonatomic) NSString *gistUrl;
 @property (weak, nonatomic) NSString *fileName;
+@property (weak, nonatomic) NSDictionary *gist;
 @end

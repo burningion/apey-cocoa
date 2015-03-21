@@ -56,7 +56,6 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="U3f-Y3-sq7">
                                             <connections>
                                                 <action selector="back:" destination="Aq7-Zy-Zb1" id="Pjw-w4-11G"/>
-                                                <segue destination="cwh-1I-ySD" kind="show" id="UuW-io-4Be"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -72,11 +71,13 @@
                     <connections>
                         <outlet property="fileTitle" destination="lnP-OV-4Wx" id="ajO-b8-8Ie"/>
                         <outlet property="webbyView" destination="QhY-to-u4r" id="T26-pQ-G6e"/>
+                        <segue destination="R62-4v-hCq" kind="show" identifier="trip" id="QDH-r2-lZ6"/>
+                        <segue destination="cwh-1I-ySD" kind="show" identifier="fall" id="nZR-9L-ET2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u94-tJ-H9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="753" y="126"/>
+            <point key="canvasLocation" x="904" y="143"/>
         </scene>
         <!--Files View Controller-->
         <scene sceneID="IgI-Gg-2AB">
@@ -123,7 +124,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UuW-io-4Be"/>
+        <segue reference="nZR-9L-ET2"/>
         <segue reference="FSC-1d-vkn"/>
+        <segue reference="QDH-r2-lZ6"/>
     </inferredMetricsTieBreakers>
 </document>

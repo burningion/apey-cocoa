@@ -122,6 +122,7 @@
         NSArray *keys = [gists[[sender integerValue]][@"files"] allKeys];
         detailController.gistUrl = gists[[sender integerValue]][@"files"][keys[0]][@"raw_url"];
         detailController.fileName = keys[0];
+        detailController.gist = gists[[sender integerValue]][@"files"];
         NSLog(@"everything got set");
     }
     else if ([segue.identifier isEqualToString:@"hop"]) {

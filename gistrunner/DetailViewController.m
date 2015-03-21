@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-
+#import "FilesViewController.h"
 
 @interface DetailViewController ()
 
@@ -18,12 +18,31 @@
 
 @implementation DetailViewController
 
-@synthesize fileTitle, webbyView, gistUrl, fileName;
+@synthesize fileTitle, webbyView, gistUrl, fileName, gist;
 
 - (IBAction)back:(id)sender {
     NSLog(@"touched");
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    NSArray *keys = [gist allKeys];
+    if ([keys count] > 1) {
+        [self performSegueWithIdentifier:@"trip" sender:keys];
+    }
+    else {
+        [self performSegueWithIdentifier:@"fall" sender:keys];
+    }
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"fall"]) {
+        NSLog(@"we're in the fall segue");
+    }
+    else if ([segue.identifier isEqualToString:@"trip"]) {
+        NSLog(@"we're in the trip segue");
+        FilesViewController *filesController = (FilesViewController *)segue.destinationViewController;
+        filesController.files = gist;
+    }
+    
+}
+
 
 
 - (void)viewDidLoad {
