@@ -33,6 +33,19 @@
         //NSLog(@"number of gists: %lu", (unsigned long)[self.gists count]);
     }failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
+         UIAlertController *alertController = [UIAlertController
+                                               alertControllerWithTitle:@"Connection Error"
+                                               message:@"Could not connect to Github API"
+                                               preferredStyle:UIAlertControllerStyleAlert];
+         UIAlertAction *okAction = [UIAlertAction
+                                    actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                    style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction *action)
+                                    {
+                                        NSLog(@"OK action");
+                                    }];
+         [alertController addAction:okAction];
+         [self presentViewController:alertController animated:YES completion:nil];
          NSLog(@"Error: %@", error);
      }];
     
@@ -82,9 +95,6 @@
 
     NSString *name = @"Anonymous";
     
-    if ([gists isEqual:[NSNull null]]) {
-        return cell;
-    }
     if ([gists[indexPath.row][@"description"] isEqual:[NSNull null]]) {
         name = @"No Description";
     }
@@ -100,7 +110,6 @@
     }
     else if ([gists[indexPath.row][@"files"] count] > 0) {
         NSArray *keys = [gists[indexPath.row][@"files"] allKeys];
-        // NSLog(@"%@", gists[indexPath.row][@"files"][keys[0]][@"language"]);
         
         if ([gists[indexPath.row][@"files"][keys[0]][@"language"] isEqual:[NSNull null]]) {
             languages = @"Unspecified";
@@ -123,7 +132,6 @@
         detailController.gistUrl = gists[[sender integerValue]][@"files"][keys[0]][@"raw_url"];
         detailController.fileName = keys[0];
         detailController.gist = gists[[sender integerValue]][@"files"];
-        NSLog(@"everything got set");
     }
     else if ([segue.identifier isEqualToString:@"hop"]) {
         NSLog(@"we're in the hop segue");

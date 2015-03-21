@@ -21,7 +21,6 @@
 @synthesize fileTitle, webbyView, gistUrl, fileName, gist;
 
 - (IBAction)back:(id)sender {
-    NSLog(@"touched");
     NSArray *keys = [gist allKeys];
     if ([keys count] > 1) {
         [self performSegueWithIdentifier:@"trip" sender:keys];
@@ -48,8 +47,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@ eee", fileName);
-    NSLog(@"%@ gggg", gistUrl);
+    
+    // Set the title to the name of file, and load the raw data in a web view
     fileTitle.topItem.title = fileName;
     NSURL *theURL = [NSURL URLWithString:gistUrl];
     NSURLRequest *theRequest  = [NSURLRequest requestWithURL:theURL];
